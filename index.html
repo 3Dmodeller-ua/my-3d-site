@@ -98,7 +98,7 @@
         /* Заглушка, яка ховає нижній інтерфейс на мобільних */
         .mobile-mask {
             display: none;
-            position: absolute;
+            position: fixed; /* Змінено на fixed для стабільності на iOS */
             bottom: 0;
             left: 0;
             width: 100%;
@@ -123,10 +123,10 @@
                 padding: 15px 20px;
             }
 
-            /* Переміщуємо кнопку зміни теми в лівий нижній куток, поверх нашої маски */
+            /* Жорстка фіксація кнопки внизу ліворуч */
             .theme-toggle-btn {
-                position: absolute;
-                bottom: 8px;
+                position: fixed; /* Тепер кнопка прив'язана до нижнього краю екрана браузера */
+                bottom: 10px;
                 left: 15px;
                 transform: none;
                 padding: 6px 14px;
