@@ -111,8 +111,9 @@
         /* 📱 МОБІЛЬНА ОПТИМІЗАЦІЯ (ВЕРТИКАЛЬНИЙ РЕЖИМ) */
         @media (max-width: 767px) and (orientation: portrait) {
             .viewer-container iframe {
-                height: 100%;
-                margin-top: 0;
+                /* Виштовхуємо верхній бар на 48px вгору, а висоту збільшуємо на 96px, щоб сховати і низ */
+                height: calc(100% + 96px);
+                margin-top: -48px;
             }
 
             .mobile-mask {
@@ -137,6 +138,7 @@
 
             .theme-toggle-btn:hover {
                 transform: scale(1.03);
+                border-color: var(--text-bright);
             }
 
             .bottom-hint {
@@ -171,7 +173,6 @@
     <div class="viewer-container">
         <div class="mobile-mask"></div>
 
-        <!-- Оновлений iframe з новим посиланням моделі -->
         <iframe 
             title="Presentation" 
             allowfullscreen 
